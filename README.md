@@ -2,6 +2,10 @@
 
 - Browser-based retirement calculator written in Rust and Yew
 
+## Demonstration
+
+- https://www.gamespawn.com/arcade/retirement-calculator/
+
 ## Usage
 
 - cd retirement-calculator/
