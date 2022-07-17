@@ -236,9 +236,6 @@ impl Component for Model {
     </tr>
     </table>
     // </form>
-    <p>
-    { self.annual_savings.to_string() }
-    </p>
     if self.annual_savings < 0.0 {
     <p>
     <font color="red">
