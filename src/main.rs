@@ -1,3 +1,5 @@
+use std::{iter::Rev, str::Chars};
+
 /// since: 2022-07-16
 use web_sys::HtmlInputElement;
 use yew::prelude::*;
@@ -136,12 +138,7 @@ impl Component for Model {
   ) -> Html {
     log::trace!("view()");
     let link = context.link();
-    let onchange_investment_interest = link.callback(|_: Event| Msg::OnChange);
-    let onchange_investment_years = link.callback(|_: Event| Msg::OnChange);
-    let onchange_retirement_income = link.callback(|_: Event| Msg::OnChange);
-    let onchange_retirement_interest = link.callback(|_: Event| Msg::OnChange);
-    let onchange_retirement_inflation = link.callback(|_: Event| Msg::OnChange);
-    let onchange_retirement_tax_rate = link.callback(|_: Event| Msg::OnChange);
+    let onchange_callback = link.callback(|_: Event| Msg::OnChange);
     html! {
     <center>
     <h1>
@@ -152,7 +149,7 @@ impl Component for Model {
     { "David Wallace Croft" }</a>
     </p>
     <p>
-    { "Version 2022-07-16" }
+    { "Version 2022-07-27" }
     </p>
     // <form>
     <table>
@@ -162,7 +159,7 @@ impl Component for Model {
     </td>
     <td>
     <input
-      onchange={onchange_retirement_income}
+      onchange={&onchange_callback}
       ref={self.retirement_income.clone()}
       size="10"
       type="text"/>
@@ -175,7 +172,7 @@ impl Component for Model {
     </td>
     <td>
     <input
-      onchange={onchange_investment_years}
+      onchange={&onchange_callback}
       ref={self.investment_years.clone()}
       size="10"
       type="text"/>
@@ -188,7 +185,7 @@ impl Component for Model {
     </td>
     <td>
     <input
-      onchange={onchange_investment_interest}
+      onchange={&onchange_callback}
       ref={self.investment_interest.clone()}
       size="10"
       type="text"/>
@@ -201,7 +198,7 @@ impl Component for Model {
     </td>
     <td>
     <input
-      onchange={onchange_retirement_interest}
+      onchange={&onchange_callback}
       ref={self.retirement_interest.clone()}
       size="10"
       type="text"/>
@@ -214,7 +211,7 @@ impl Component for Model {
     </td>
     <td>
     <input
-      onchange={onchange_retirement_tax_rate}
+      onchange={&onchange_callback}
       ref={self.retirement_tax_rate.clone()}
       size="10"
       type="text"/>
@@ -227,7 +224,7 @@ impl Component for Model {
     </td>
     <td>
     <input
-      onchange={onchange_retirement_inflation}
+      onchange={&onchange_callback}
       ref={self.retirement_inflation.clone()}
       size="10"
       type="text"/>
@@ -246,11 +243,22 @@ impl Component for Model {
     <p>
     <font color="green">
     { "You would need to invest " }
-    { self.annual_savings }
+    { to_dollars(self.annual_savings) }
     { " each year." }
     </font>
     </p>
     }
+    <p>
+    { "This calculator does not factor in social security income." }
+    <br/>
+    { "Click " }
+    <a
+      target="_blank"
+      href="https://www.bankrate.com/retirement/retirement-plan-calculator/">
+    { "here" }
+    </a>
+    { " for a calculator that includes social security income." }
+    </p>
     </center>
     }
   }
@@ -294,6 +302,11 @@ fn calculate_required_annual_investment(
   )
 }
 
+fn main() {
+  wasm_logger::init(wasm_logger::Config::new(log::Level::Trace));
+  yew::start_app::<Model>();
+}
+
 fn parse_or_reset(
   node_ref: &NodeRef,
   default_value: &str,
@@ -306,7 +319,34 @@ fn parse_or_reset(
   default_value.parse::<f64>().unwrap()
 }
 
-fn main() {
-  wasm_logger::init(wasm_logger::Config::new(log::Level::Trace));
-  yew::start_app::<Model>();
+fn to_comma_separated(value: u64) -> String {
+  let value_as_string: String = value.to_string();
+  let reversed_without_commas: Rev<Chars> = value_as_string.chars().rev();
+  let mut reversed_with_commas: String = "".to_string();
+  for (i, c) in reversed_without_commas.enumerate() {
+    if (i > 0) && (i % 3 == 0) {
+      reversed_with_commas.push(',');
+    }
+    reversed_with_commas.push(c);
+  }
+  let comma_separated: String = to_reverse_string(reversed_with_commas);
+  comma_separated
+}
+
+fn to_dollars(amount: f64) -> String {
+  let rounded_amount: f64 = amount.round();
+  let integer_amount: i64 = rounded_amount as i64;
+  let positive_amount: u64 = integer_amount.unsigned_abs();
+  let comma_separated_string: String = to_comma_separated(positive_amount);
+  let mut dollars: String = "".to_owned();
+  if integer_amount.is_negative() {
+    dollars.push('-');
+  }
+  dollars.push('$');
+  dollars += &comma_separated_string;
+  dollars
+}
+
+fn to_reverse_string(s: String) -> String {
+  s.chars().rev().collect::<String>()
 }
