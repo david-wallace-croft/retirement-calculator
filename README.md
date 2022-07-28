@@ -13,6 +13,12 @@
 - trunk serve
 - http://localhost:8080/
 
+## Deploy
+
+- trunk build --release
+- rm ../my_website_project/public_html/retirement_calculator/*
+- cp dist/* ../my_website_project/public_html/retirement_calculator/
+
 ## History
 
 - Initial release: 2022-07-16
