@@ -1,6 +1,9 @@
+//! version: 2022-07-30
+//! since: 2022-07-16
+
 use std::{iter::Rev, str::Chars};
 
-/// since: 2022-07-16
+use com_croftsoft_core::math::finance_lib::annual_savings_needed;
 use web_sys::HtmlInputElement;
 use yew::prelude::*;
 
@@ -149,7 +152,7 @@ impl Component for Model {
     { "David Wallace Croft" }</a>
     </p>
     <p>
-    { "Version 2022-07-27" }
+    { "Version 2022-07-30" }
     </p>
     // <form>
     <table>
@@ -262,22 +265,6 @@ impl Component for Model {
     </center>
     }
   }
-}
-
-//  /*********************************************************************
-//  * Calculates the annual savings necessary to accumulate a specified
-//  * value in the future.
-//  *
-//  * @param f Future value desired.
-//  * @param r Annual interest.
-//  * @param t Number of years of savings.
-//  *********************************************************************/
-fn annual_savings_needed(
-  f: f64,
-  r: f64,
-  t: f64,
-) -> f64 {
-  f * r / ((1.0 + r).powf(t) - 1.0)
 }
 
 fn calculate_required_annual_investment(

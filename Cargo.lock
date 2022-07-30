@@ -27,6 +27,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
 
 [[package]]
+name = "com-croftsoft-core"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "89a0862f5338e1cb489180f27da810f9d0d01c0d8a78053680f46d08668ce402"
+
+[[package]]
 name = "console_error_panic_hook"
 version = "0.1.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -434,6 +440,7 @@ dependencies = [
 name = "yew-app"
 version = "0.1.0"
 dependencies = [
+ "com-croftsoft-core",
  "log",
  "wasm-logger",
  "web-sys",
