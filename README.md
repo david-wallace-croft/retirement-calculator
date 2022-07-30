@@ -15,9 +15,9 @@
 
 ## Deploy
 
-- trunk build --release --public-url my_folder/retirement_calculator
-- rm ../my_website_project/public_html/my_folder/retirement_calculator/*
-- cp dist/* ../my_website_project/public_html/my_folder/retirement_calculator/
+- trunk build --release --public-url my-folder/retirement-calculator
+- rm ../my_website_project/public_html/my-folder/retirement-calculator/*
+- cp dist/* ../my_website_project/public_html/my-folder/retirement-calculator/
 
 ## History
 
