@@ -3,7 +3,7 @@
 
 use std::{iter::Rev, str::Chars};
 
-use com_croftsoft_core::math::finance_lib::annual_savings_needed;
+use croftsoft::core::math::finance_lib::annual_savings_needed;
 use web_sys::HtmlInputElement;
 use yew::prelude::*;
 

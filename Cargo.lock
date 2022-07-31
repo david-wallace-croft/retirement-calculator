@@ -43,6 +43,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "croftsoft"
+version = "0.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2ed447544a3e496da043ccd942b41f4b526a68a6e9920637738db097eb59bfc0"
+dependencies = [
+ "com-croftsoft-core",
+]
+
+[[package]]
 name = "gloo"
 version = "0.4.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -440,7 +449,7 @@ dependencies = [
 name = "yew-app"
 version = "0.1.0"
 dependencies = [
- "com-croftsoft-core",
+ "croftsoft",
  "log",
  "wasm-logger",
  "web-sys",

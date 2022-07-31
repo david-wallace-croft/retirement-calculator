@@ -8,11 +8,12 @@ edition = "2021"
 homepage = "http://www.croftsoft.com/"
 keywords = ["calculator", "retirement", "yew"]
 license = "MIT"
+publish = false
 readme = "README.md"
 repository = "https://github.com/david-wallace-croft/retirement-calculator"
 
 [dependencies]
-com-croftsoft-core = "0.1.0"
+croftsoft = "0.1.1"
 log = "0.4.6"
 wasm-logger = "0.2.0"
 web-sys = "0.3.58"
