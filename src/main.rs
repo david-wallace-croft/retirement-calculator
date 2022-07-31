@@ -166,7 +166,7 @@ impl Component for Model {
       ref={self.retirement_income.clone()}
       size="10"
       type="text"/>
-    { " dollars" }
+    { " dollars ($)" }
     </td>
     </tr>
     <tr>
@@ -192,7 +192,7 @@ impl Component for Model {
       ref={self.investment_interest.clone()}
       size="10"
       type="text"/>
-    { " %" }
+    { " percent (%)" }
     </td>
     </tr>
     <tr>
@@ -205,7 +205,7 @@ impl Component for Model {
       ref={self.retirement_interest.clone()}
       size="10"
       type="text"/>
-    { " %" }
+    { " percent (%)" }
     </td>
     </tr>
     <tr>
@@ -218,7 +218,7 @@ impl Component for Model {
       ref={self.retirement_tax_rate.clone()}
       size="10"
       type="text"/>
-    { " %" }
+    { " percent (%)" }
     </td>
     </tr>
     <tr>
@@ -231,7 +231,7 @@ impl Component for Model {
       ref={self.retirement_inflation.clone()}
       size="10"
       type="text"/>
-    { " %" }
+    { " percent (%)" }
     </td>
     </tr>
     </table>
