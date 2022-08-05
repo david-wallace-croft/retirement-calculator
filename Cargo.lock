@@ -28,9 +28,9 @@ checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
 
 [[package]]
 name = "com-croftsoft-core"
-version = "0.1.0"
+version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "89a0862f5338e1cb489180f27da810f9d0d01c0d8a78053680f46d08668ce402"
+checksum = "bdd2c5d363674b32da9897a55cff5500d547f94855d745767aafc82a79644475"
 
 [[package]]
 name = "console_error_panic_hook"
@@ -44,9 +44,9 @@ dependencies = [
 
 [[package]]
 name = "croftsoft"
-version = "0.1.1"
+version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2ed447544a3e496da043ccd942b41f4b526a68a6e9920637738db097eb59bfc0"
+checksum = "256bd4d990f03d2c81948a0b73057180ddc7a1056a7818fdd4fc4a22dce79669"
 dependencies = [
  "com-croftsoft-core",
 ]

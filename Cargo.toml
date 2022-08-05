@@ -13,8 +13,13 @@ readme = "README.md"
 repository = "https://github.com/david-wallace-croft/retirement-calculator"
 
 [dependencies]
-croftsoft = "0.1.1"
+croftsoft = "0.2.0"
 log = "0.4.6"
 wasm-logger = "0.2.0"
 web-sys = "0.3.58"
 yew = "0.19"
+
+# [dependencies.com-croftsoft-core]
+# branch = "main"
+# git = "https://github.com/david-wallace-croft/com-croftsoft-core"
+# version = "0.2.0"

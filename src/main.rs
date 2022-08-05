@@ -1,9 +1,9 @@
-//! version: 2022-07-30
+//! version: 2022-08-04
 //! since: 2022-07-16
 
 use std::{iter::Rev, str::Chars};
 
-use croftsoft::core::math::finance_lib::annual_savings_needed;
+use croftsoft::core::math::finance_lib::PeriodicSavingsNeeded;
 use web_sys::HtmlInputElement;
 use yew::prelude::*;
 
@@ -145,14 +145,14 @@ impl Component for Model {
     html! {
     <center>
     <h1>
-    { "Retirement Calculator" }
+    { "CroftSoft Retirement Calculator" }
     </h1>
     <p>
     <a target="_blank" href="http://www.croftsoft.com/people/david/">
     { "David Wallace Croft" }</a>
     </p>
     <p>
-    { "Version 2022-07-30" }
+    { "Version 2022-08-04" }
     </p>
     // <form>
     <table>
@@ -282,11 +282,12 @@ fn calculate_required_annual_investment(
   }
   let future_value_savings =
     savings * (1.0 + inflation_rate).powf(years_of_saving);
-  annual_savings_needed(
-    future_value_savings,
-    investment_interest_rate,
-    years_of_saving,
-  )
+  PeriodicSavingsNeeded {
+    future_value: future_value_savings,
+    interest_rate: investment_interest_rate,
+    time_periods: years_of_saving,
+  }
+  .calculate()
 }
 
 fn main() {
