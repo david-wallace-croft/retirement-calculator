@@ -262,6 +262,20 @@ impl Component for Model {
     </a>
     { " for a calculator that includes social security income." }
     </p>
+    <p>
+    { "Copyright 2022 " }
+    <a
+      target="_blank"
+      href="http://www.croftsoft.com/">
+    { "CroftSoft Inc" }</a>
+    <br/>
+    { "The source code for this application is available " }
+    <a
+      target="_blank"
+      href="https://github.com/david-wallace-croft/retirement-calculator">
+    { "here" }
+    </a>{ "." }
+    </p>
     </center>
     }
   }
