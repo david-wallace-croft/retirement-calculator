@@ -4,7 +4,7 @@
 
 ## Demonstration
 
-- https://www.gamespawn.com/arcade/retirement-calculator/
+- https://www.croftsoft.com/portfolio/retirement-calculator/
 
 ## Usage
 
