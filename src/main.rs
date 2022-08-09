@@ -148,7 +148,7 @@ impl Component for Model {
     { "CroftSoft Retirement Calculator" }
     </h1>
     <p>
-    <a target="_blank" href="http://www.croftsoft.com/people/david/">
+    <a target="_blank" href="https://www.croftsoft.com/people/david/">
     { "David Wallace Croft" }</a>
     </p>
     <p>
@@ -266,7 +266,7 @@ impl Component for Model {
     { "Copyright 2022 " }
     <a
       target="_blank"
-      href="http://www.croftsoft.com/">
+      href="https://www.croftsoft.com/">
     { "CroftSoft Inc" }</a>
     <br/>
     { "The source code for this application is available " }
