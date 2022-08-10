@@ -263,7 +263,7 @@ impl Component for Model {
     { " for a calculator that includes social security income." }
     </p>
     <p>
-    { "&copy; 2022 " }
+    { "Copyright 2022 " }
     <a
       target="_blank"
       href="https://www.croftsoft.com/">
