@@ -152,7 +152,7 @@ impl Component for Model {
     { "David Wallace Croft" }</a>
     </p>
     <p>
-    { "Version 2022-08-04" }
+    { "Version 2022-08-09" }
     </p>
     // <form>
     <table>
@@ -263,7 +263,7 @@ impl Component for Model {
     { " for a calculator that includes social security income." }
     </p>
     <p>
-    { "Copyright 2022 " }
+    { "&copy; 2022 " }
     <a
       target="_blank"
       href="https://www.croftsoft.com/">
