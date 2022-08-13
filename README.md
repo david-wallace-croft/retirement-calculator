@@ -10,8 +10,7 @@
 
 - cd retirement-calculator/
 - cargo install trunk
-- trunk serve
-- http://localhost:8080/
+- trunk serve --open
 
 ## Deploy
 
